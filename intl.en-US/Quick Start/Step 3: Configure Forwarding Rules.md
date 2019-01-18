@@ -3,11 +3,11 @@
 1.   Log on to the Alibaba Cloud Security Game Shield Management console, go to **Business Management**, and select **Game Name**. 
 2.   Locate to the business that you added, and click **Forwarding Rule Management**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13508/3442_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13508/15477777523442_en-US.png)
 
 3.   Click **Rule Management** and select **Add a rule**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13508/3443_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13508/15477777523443_en-US.png)
 
 4.   In the Add Rule dialog box, fill in the forwarding rule, and click **OK**. 
 
@@ -17,6 +17,6 @@
 
     **Note:** Ports below 1024, except port 80 and port 433, are system reserved ports. If you want to add such ports, please contact the Game Shield team.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13508/3446_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13508/15477777523446_en-US.png)
 
 
