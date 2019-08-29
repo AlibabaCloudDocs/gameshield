@@ -12,7 +12,7 @@ If you need fast data transmission, we recommend that you design a transmission 
 
 ## Plan description {#section_9eh_5ws_pu5 .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1148281/156652541653861_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1148281/156704663753861_en-US.png)
 
 -   Nodes in all supported regions can establish connections to clients. These nodes can be used only for your gaming service.
 -   GameShield selects a node in a region to establish the optimal connection to the origin.
@@ -35,36 +35,36 @@ Currently nodes are available in the following regions:
     The core interface is `YunCeng.getProxyTcpByDomain(Token, GroupName, Dip, Dport)` with multiple `GroupName` values input. With this interface, you can obtain the following endpoints:
 
     ``` {#codeblock_h7e_wbe_izx}
-    Link 1 from China (Hangzhou) to China (Hong Kong): https://yxd.xxx.com:54723
-    Link 2 from China (Shenzhen) to China (Hong Kong): https://yxd.xxx.com:45712
-    Link 3 from China (Beijing) to China (Hong Kong): https://yxd.xxx.com:56371
-    Link 4 from a region where Alibaba Cloud Anti-DDoS Pro is activated to China (Hong Kong) with filing not required or other traditional transmission links: https://gf.xxx.com
+    Link 1 from China (Hangzhou) to China (Hong Kong): https://yxd.example.com:54723
+    Link 2 from China (Shenzhen) to China (Hong Kong): https://yxd.example.com:45712
+    Link 3 from China (Beijing) to China (Hong Kong): https://yxd.example.com:56371
+    Link 4 from a region where Alibaba Cloud Anti-DDoS Pro is activated to China (Hong Kong) with filing not required or other traditional transmission links: https://gf.example.com
     ```
 
     **Note:** The process of obtaining an endpoint is equivalent to that of domain name resolution, which does not affect your business.
 
-2.  You can call the SpeedTest interface of the business SDK to test the delay of multiple transmission links over which clients can access origin servers. Then, you can compare the test results. For example, you can use `https://yxd.xxx.com:17281/speedtest` to complete a test. The result is shown as follows:
+2.  You can call the SpeedTest interface of the business SDK to test the delay of multiple transmission links over which clients can access origin servers. Then, you can compare the test results. For example, you can use `https://yxd.example.com:17281/speedtest` to complete a test. The result is shown as follows:
 
     ``` {#codeblock_cih_smw_yk1}
     {
      "baiduPingDelay": "533",
-     "domainName": "https://yxd.xxx.com:51567",
+     "domainName": "https://yxd.example.com:51567",
      "domainNameDelays": [{
        "delay": 1990,
-       "url": "https://yxd.xxx.com:51567"
+       "url": "https://yxd.example.com:51567"
      }, {
        "delay": 2174,
-       "url": "https://yxd.xxx.com:37869"
+       "url": "https://yxd.example.com:37869"
      }, {
        "delay": 2369,
-       "url": "https://yxd.xxx.com:38465"
+       "url": "https://yxd.example.com:38465"
      }, {
        "delay": 3196,
-       "url": "https://yxd.xxx.com:42877"
+       "url": "https://yxd.example.com:42877"
      }],
      {
        "delay":23196,
-       "url": "https://gf.xxx.com"
+       "url": "https://gf.example.com"
      }],
      "ipAddress": "113.210.179.96",
      "netWorkType": "4G",
@@ -76,7 +76,7 @@ Currently nodes are available in the following regions:
 
     You can upload the result to Log Service for comparison and analysis.
 
-3.  From the result, use the endpoint \(https://yxd.xxx.com:51567\) with the shortest delay \(1990\) to access your business.
+3.  From the result, use the endpoint \(https://yxd.example.com:51567\) with the shortest delay \(1990\) to access your business.
 
 You can also perform other tests based on your business requirements. For example,
 
