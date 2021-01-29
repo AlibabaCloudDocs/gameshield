@@ -1,8 +1,8 @@
-# Best practice for achieving fast data transmission {#concept_1443490 .concept}
+# Best practice for achieving fast data transmission
 
 This topic describes how to design a fast transmission plan with GameShield to satisfy your business requirements.
 
-## Background {#section_yjh_had_miu .section}
+## Background
 
 GameShield provides nodes in some regions and allows the nodes to establish connections to origin servers and clients to achieve fast data transmission. For example, if your origin server is located in the China \(Shenzhen\) region, GameShield can establish connections starting from China \(Beijing\) to China \(Shenzhen\) for your gamers in northern China. In this way, these gamers can enjoy fast access to your origin server.
 
@@ -10,16 +10,16 @@ However, the routing algorithm of GameShield focuses on defending against attack
 
 If you need fast data transmission, we recommend that you design a transmission plan based on your own business requirements.
 
-## Plan description {#section_9eh_5ws_pu5 .section}
+## Plan description
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1148281/156704663753861_en-US.png)
+![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/1148281/156704663753861_en-US.png)
 
 -   Nodes in all supported regions can establish connections to clients. These nodes can be used only for your gaming service.
 -   GameShield selects a node in a region to establish the optimal connection to the origin.
 -   Two nodes within the border are connected over the Alibaba Cloud network while cross-border transmission between two nodes is through the CN2 network.
 -   Although fast transmission plans do not affect the capability of GameShield against DDoS attacks and HTTP flood attacks, some users may experience poorer services while GameShield is in defense mode.
 
-## Supported regions {#section_zf2_a68_rbq .section}
+## Supported regions
 
 Currently nodes are available in the following regions:
 
@@ -28,13 +28,13 @@ Currently nodes are available in the following regions:
     -   Regions in Mainland China: China \(Hangzhou\), China \(Shanghai\), China \(Beijing\), and China \(Shenzhen\) in what regions BGP is deployed.
     -   Regions outside Mainland China: China \(Hong Kong\) and Singapore in what regions BGP is deployed.
 
-## Procedure {#section_y85_5jg_ofg .section}
+## Procedure
 
 1.  When initializing SDK, you need to obtain endpoints that are used for accessing nodes from clients based on different `GroupName` values, but the same origin IP address and port.
 
     The core interface is `YunCeng.getProxyTcpByDomain(Token, GroupName, Dip, Dport)` with multiple `GroupName` values input. With this interface, you can obtain the following endpoints:
 
-    ``` {#codeblock_h7e_wbe_izx}
+    ```
     Link 1 from China (Hangzhou) to China (Hong Kong): https://yxd.example.com:54723
     Link 2 from China (Shenzhen) to China (Hong Kong): https://yxd.example.com:45712
     Link 3 from China (Beijing) to China (Hong Kong): https://yxd.example.com:56371
@@ -45,7 +45,7 @@ Currently nodes are available in the following regions:
 
 2.  You can call the SpeedTest interface of the business SDK to test the delay of multiple transmission links over which clients can access origin servers. Then, you can compare the test results. For example, you can use `https://yxd.example.com:17281/speedtest` to complete a test. The result is shown as follows:
 
-    ``` {#codeblock_cih_smw_yk1}
+    ```
     {
      "baiduPingDelay": "533",
      "domainName": "https://yxd.example.com:51567",
